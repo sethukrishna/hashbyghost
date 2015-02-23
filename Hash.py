@@ -29,6 +29,9 @@ def main():
 	#This bit vector will hold exactly 32 bits, all initialized to the 0 bit value.
 	bv  = BitVector.BitVector(size = 32)
 	print (bv)
+	#file object = open(file_name [, access_mode][, buffering])
+	fo = open("testFile", "r+")
+	print (fo)
 	print ("Next Up: Scan the file one byte at a time!")
 	
 main()
