@@ -7,17 +7,7 @@ You are required to implement in Python a very simple hash function
 Write a function that creates a 32-bit hash of a file 
 (you can represent 32-bits in hexadecimal and use it as the output for simplicity) 
 through the following steps:
-
-
-Before a new byte is read from the file, 
-circularly shift the bit pattern in the hash to the left by 8 positions.
-Note that if there is no more data to read, 
-you stop here (i.e., after shifting).
-XOR the new byte read from the file with 
-the least significant byte (the rightmost) of the hash.
-
-
-Hint: You can use BitVector Class
+See GitHub for prompt
 
 '''
 #!/usr/bin/env python
