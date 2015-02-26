@@ -17,10 +17,7 @@ from BitVector import *
 from glob import *
 
 def main():
-	#Initialize the hash to all zeros.
-	#This bit vector will hold exactly 32 bits, all initialized to the 0 bit value.
-	myHash = BitVector(size = 32)
-	
+
 	#INCOMPLETE
 	###########################
 	#Scan your directory (current), compute the hash of all your files.
@@ -28,26 +25,33 @@ def main():
 	dirScan = glob('*')
 	fileCount = 0
 
-	print(dirScan)
-	#bv = BitVector( dirScan )
+	#bv = BitVector(dirScan [i])
 	###########################
 
 	bv = BitVector( filename = 'testFile.txt' )
+
+	#Initialize the hash to all zeros.
+	#This bit vector will hold exactly 32 bits, all initialized to the 0 bit value.
+	myHash = BitVector(size = 32)
 	
-	#If there no more data to read,
+	#If no more data to read,
 	#Stop after shifting
 	while (bv.more_to_read):
-		#Scan the file one byte at a time.
-		bv1 = bv_read = bv.read_bits_from_file(8)
-		print(bv_read)
+		#Scan the file one byte (8bits) at a time.
+		bv1 = bv.read_bits_from_file(8)
+		print("orig:",bv1)	
+		
+		#Needs Attention: Shifting 8 left into itself	
 		#Circularly shift bit pattern in hash to left by 8 pos.
 		bv1 << 8
+		print("shft:", bv1)
 
 	#XOR the new byte read from the file with 
 	#the least significant byte (the rightmost) of the hash.
 	myHash[0:8] = bv1 ^ myHash[0:8]
-	
-	print(bv_read)
+	#Same values, see above issue
+	#XOR'ing itself
+	print(bv1, myHash[0:8])
 	
 	bv.close_file_object()
 		
