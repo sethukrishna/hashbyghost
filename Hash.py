@@ -28,8 +28,10 @@ def main():
 	#bv = BitVector(dirScan [i])
 	###########################
 
-	bv = BitVector( filename = 'testFile.txt' )
+	#Wrap for each file
 
+	bv = BitVector( filename = 'testFile.txt' )
+	
 	#Initialize the hash to all zeros.
 	#This bit vector will hold exactly 32 bits, all initialized to the 0 bit value.
 	myHash = BitVector(size = 32)
@@ -41,17 +43,15 @@ def main():
 		bv1 = bv.read_bits_from_file(8)
 		print("orig:",bv1)	
 		
-		#Needs Attention: Shifting 8 left into itself	
 		#Circularly shift bit pattern in hash to left by 8 pos.
-		bv1 << 8
-		print("shft:", bv1)
+		myHash << 8
+		print("shft:", myHash)
+		
+		#XOR the new byte read from the file with 
+		#the least significant byte (the rightmost) of the hash.
+		myHash[0:8] = bv1 ^ myHash[0:8]
 
-	#XOR the new byte read from the file with 
-	#the least significant byte (the rightmost) of the hash.
-	myHash[0:8] = bv1 ^ myHash[0:8]
-	#Same values, see above issue
-	#XOR'ing itself
-	print(bv1, myHash[0:8])
+	#Convert to Hex
 	
 	bv.close_file_object()
 		
