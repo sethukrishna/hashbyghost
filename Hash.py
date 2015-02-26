@@ -21,8 +21,7 @@ def main():
 	#INCOMPLETE
 	###########################
 	#Scan your directory (current), compute the hash of all your files.
-	# TO EXCLUDE: PYCACHE, README,  
-	dirScan = glob('*')
+	dirScan = glob('*.*')
 	fileCount = 0
 
 	###########################
@@ -30,7 +29,7 @@ def main():
 	#Wrap for each file
 	
 	#testFile.txt
-	bv = BitVector(filename = dirScan[5])
+	bv = BitVector(filename = dirScan[4])
 	
 	#Initialize the hash to all zeros.
 	#This bit vector will hold exactly 32 bits, all initialized to the 0 bit value.
@@ -55,7 +54,7 @@ def main():
 		
 	#Convert to Hex
 	print (myHash.getHexStringFromBitVector())
-	
+
 	'''
 	#Dump the hash values in some output file.
 	dumpFile = open('dump.txt', 'wb')
