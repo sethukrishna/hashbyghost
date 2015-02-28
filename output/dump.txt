@@ -1,0 +1,5 @@
+
+input/testFile.txt:4f044328
+input/testFile2.txt:11160745
+input/testFile3.txt:4f044328
+input/testFile4.txt:2a48727b
