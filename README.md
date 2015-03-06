@@ -1,7 +1,7 @@
-# CS410-HW4
+# SimpleHash
 Hash Function Implementation with Python
 ----------------------------------------
-You are required to implement in Python a very simple hash function (that is meant more for play than for any serious production work). Write a function that creates a 32-bit hash of a file (you can represent 32-bits in hexadecimal and use it as the output for simplicity) through the following steps:
+This is a very simple hash function meant more for play than actual production work. This function creates a 32-bit hexidecimal hash dump of a file through the following steps:
 
  - Initialize the hash to all zeros.
  - Scan the file one byte at a time.
@@ -10,4 +10,4 @@ You are required to implement in Python a very simple hash function (that is mea
  - XOR the new byte read from the file with the least significant byte (the rightmost) of the hash.
  - Scan your directory (a very simple thing to do in Python), and compute the hash of all your files.
  - Dump the hash values in some output file.
-  * Hint: You can use BitVector Class
+  * Reference: BitVector [https://engineering.purdue.edu/kak/dist/BitVector-3.3.2.html]()
