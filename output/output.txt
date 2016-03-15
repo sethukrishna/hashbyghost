@@ -6,3 +6,6 @@ input/sethu3.txt:543b3427
 input/sethu1.txt:2c5c1a40
 input/sethu2.txt:71747a63
 input/sethu.txt:7003194c
+input/sethu1.txt:2c5c1a40
+input/sethu2.txt:71747a63
+input/sethu.txt:7003194c
